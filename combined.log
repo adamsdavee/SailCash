@@ -77,3 +77,17 @@
 {"level":"error","message":"User.findOne is not a function","service":"fintech-service","stack":"TypeError: User.findOne is not a function\n    at UserRepository.findByPhoneNumber (C:\\Users\\user\\Documents\\Codes\\SailCash\\src\\modules\\user\\repository\\user.repository.js:9:19)\n    at UserService.createUser (C:\\Users\\user\\Documents\\Codes\\SailCash\\src\\modules\\user\\service\\user.service.js:7:49)\n    at exports.createUser (C:\\Users\\user\\Documents\\Codes\\SailCash\\src\\modules\\user\\controller\\user.controller.js:8:38)\n    at Layer.handleRequest (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\lib\\route.js:157:13)\n    at exports.validateCreateUser (C:\\Users\\user\\Documents\\Codes\\SailCash\\src\\modules\\user\\validator\\user.validator.js:11:4)\n    at Layer.handleRequest (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\lib\\route.js:157:13)\n    at Route.dispatch (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\lib\\route.js:117:3)\n    at handle (C:\\Users\\user\\Documents\\Codes\\SailCash\\node_modules\\router\\index.js:435:11)","timestamp":"2026-06-25T09:40:19.534Z"}
 {"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:43:22.745Z"}
 {"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:43:25.189Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:43:44.266Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:43:45.894Z"}
+{"level":"info","message":"Received POST request to /api/v1/users","service":"fintech-service","timestamp":"2026-06-25T09:44:03.671Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T09:44:03.672Z"}
+{"level":"info","message":"Received GET request to /api/v1/users/+2348012345678","service":"fintech-service","timestamp":"2026-06-25T09:45:02.816Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T09:45:02.817Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:46:30.890Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:46:33.115Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:47:03.243Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:47:04.687Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:47:25.881Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:47:27.290Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T09:48:05.369Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T09:48:07.140Z"}

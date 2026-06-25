@@ -4,7 +4,11 @@ const router = express.Router()
 
 const systemRoutes = require("../modules/system/routes/system.routes")
 
+const userRoutes = require("../modules/user/routes/user.routes")
+
 router.use("/", systemRoutes)
+
+router.use("/api/v1", userRoutes)
 
 module.exports = router
 

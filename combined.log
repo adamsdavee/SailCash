@@ -193,3 +193,63 @@
 {"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T12:31:19.191Z"}
 {"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T14:00:00.043Z"}
 {"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T14:28:32.049Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:03:17.468Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:03:19.632Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:03:32.241Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:03:33.655Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:03:42.271Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:03:43.770Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:03:53.232Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:03:54.689Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:04:03.175Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:04:04.686Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:04:21.730Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:04:23.720Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:11:11.013Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:11:12.739Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:12:20.640Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:12:22.450Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:15:58.220Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:16:00.203Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:18:21.264Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:18:23.270Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:19:22.104Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:19:24.053Z"}
+{"level":"info","message":"Received GET request to /api/v1/users","service":"fintech-service","timestamp":"2026-06-25T15:21:31.188Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T15:21:31.190Z"}
+{"level":"info","message":"Received GET request to /api/v1/users","service":"fintech-service","timestamp":"2026-06-25T15:21:35.848Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T15:21:35.849Z"}
+{"level":"info","message":"Received GET request to /api/v1/","service":"fintech-service","timestamp":"2026-06-25T15:21:41.227Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T15:21:41.228Z"}
+{"level":"info","message":"Received GET request to /api/v1/users/+2348012345678","service":"fintech-service","timestamp":"2026-06-25T15:21:57.627Z"}
+{"level":"info","message":"Request body: [object Object]","service":"fintech-service","timestamp":"2026-06-25T15:21:57.636Z"}
+{"level":"info","message":"Received GET request to /api/v1/balance","service":"fintech-service","timestamp":"2026-06-25T15:29:42.785Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:29:42.786Z"}
+{"level":"info","message":"Received GET request to /api/v1/balance","service":"fintech-service","timestamp":"2026-06-25T15:29:45.412Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:29:45.413Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:30:26.093Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:30:26.094Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:31:25.690Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:31:28.028Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:34:02.428Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:34:02.431Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:35:13.287Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:35:15.655Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:35:23.405Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:35:23.407Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T15:41:16.257Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T15:41:18.964Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:41:20.299Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:41:20.300Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:41:25.133Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:41:25.136Z"}
+{"level":"info","message":"Received GET request to /api/v1/balances/6a3cf8639df934383d179622","service":"fintech-service","timestamp":"2026-06-25T15:42:50.374Z"}
+{"level":"info","message":"Request body: undefined","service":"fintech-service","timestamp":"2026-06-25T15:42:50.375Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T16:19:11.880Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T17:02:31.536Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T17:05:18.128Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T17:05:20.787Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T17:06:55.612Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T17:06:57.861Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T17:07:26.739Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T17:07:28.215Z"}

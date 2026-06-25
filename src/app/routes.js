@@ -10,6 +10,8 @@ const chainRoutes = require("../modules/chain/routes/chain.routes")
 
 const assetRoutes = require("../modules/asset/routes/asset.routes")
 
+const balanceRoutes = require("../modules/balance/routes/balance.routes")
+
 router.use("/", systemRoutes)
 
 router.use("/api/v1", userRoutes) // Admin only routes, not to be made public
@@ -17,6 +19,8 @@ router.use("/api/v1", userRoutes) // Admin only routes, not to be made public
 router.use("/api/v1", chainRoutes) // Admin only routes, not to be made public
 
 router.use("/api/v1", assetRoutes)
+
+router.use("/api/v1", balanceRoutes)
 
 module.exports = router
 

@@ -26,4 +26,17 @@ module.exports = {
       SUCCESS: "SUCCESS",
       FAILED: "FAILED",
    },
+
+   ASSET_TYPES: {
+      FIAT: "FIAT",
+      CRYPTO: "CRYPTO",
+      STABLECOIN: "STABLECOIN",
+   },
+
+   CHAIN_CODES: {
+      BSC: "BSC",
+      ETH: "ETH",
+      BASE: "BASE",
+      ARBITRUM: "ARBITRUM",
+   },
 }

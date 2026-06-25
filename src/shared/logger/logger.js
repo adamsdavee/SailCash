@@ -1,14 +1,14 @@
 const winston = require("winston")
 
 const logger = winston.createLogger({
-   level: process.env.NODE_ENV === "production" ? "info" : "debug",
+   level: "info",
    format: winston.format.combine(
       winston.format.timestamp(),
       winston.format.errors({ stack: true }),
       winston.format.splat(),
       winston.format.json(),
    ),
-   defaultMeta: { service: "media-service" },
+   defaultMeta: { service: "fintech-service" },
    transports: [
       new winston.transports.Console({
          format: winston.format.combine(

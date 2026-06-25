@@ -1,0 +1,25 @@
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:27:21.151Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:28:38.291Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:28:40.731Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:31:50.162Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:37:08.315Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:37:10.389Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:37:12.099Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:37:41.524Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:37:43.643Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:37:43.869Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:38:05.718Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:38:07.299Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:38:08.453Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:42:07.821Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:42:10.277Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:42:11.858Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:42:27.417Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:42:29.058Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:42:31.718Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:42:35.281Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:42:51.362Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:42:53.020Z"}
+{"level":"info","message":{"method":"GET","url":"/health"},"service":"fintech-service","timestamp":"2026-06-25T07:42:56.549Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-25T07:43:21.917Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-25T07:43:24.021Z"}

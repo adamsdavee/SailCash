@@ -1,10 +1,18 @@
 exports.validateCreateAsset = (req, res, next) => {
-   const { name, symbol, chain, type } = req.body
+   const { assetCode, name, symbol, chainCode, type, decimals } = req.body
 
-   if (!name || !symbol || !chain || !type) {
+   if (
+      !assetCode ||
+      !name ||
+      !symbol ||
+      !chainCode ||
+      !type ||
+      decimals === undefined
+   ) {
       return res.status(400).json({
          success: false,
-         message: "Missing required fields",
+         message:
+            "assetCode, name, symbol, chainCode, type and decimals are required",
       })
    }
 

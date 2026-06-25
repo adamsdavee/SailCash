@@ -5,6 +5,7 @@ const { success } = require("../../../shared/utils/apiResponse")
 // Comes in json(req.body)
 exports.createUser = async (req, res, next) => {
    try {
+      // CHeck if user exists before creating a new user
       const user = await userService.createUser(req.body)
 
       return success(res, user, "User created successfully")

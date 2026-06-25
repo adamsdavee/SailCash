@@ -5,22 +5,17 @@ class AssetRepository {
       return Asset.create(payload)
    }
 
-   async findById(id) {
-      return Asset.findById(id)
-   }
-
-   async findBySymbolAndChain(symbol, chain) {
-      return Asset.findOne({
-         symbol,
-         chain,
-         isActive: true,
-      })
-   }
-
    async findActiveAssets() {
       return Asset.find({
          isActive: true,
-      })
+      }).populate("chainId", "name code")
+   }
+
+   async findByAssetCode(assetCode) {
+      return Asset.findOne({
+         assetCode,
+         isActive: true,
+      }).populate("chainId", "name code")
    }
 }
 

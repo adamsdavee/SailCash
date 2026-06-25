@@ -11,6 +11,13 @@ const assetSchema = new mongoose.Schema(
          index: true,
       },
 
+      assetCode: {
+         type: String,
+         required: true,
+         unique: true,
+         index: true,
+      },
+
       name: {
          type: String,
          required: true,
@@ -21,9 +28,11 @@ const assetSchema = new mongoose.Schema(
          required: true,
       },
 
-      chain: {
-         type: String,
+      chainId: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "Chain",
          required: true,
+         index: true,
       },
 
       type: {
@@ -54,16 +63,6 @@ const assetSchema = new mongoose.Schema(
    },
    {
       timestamps: true,
-   },
-)
-
-assetSchema.index(
-   {
-      symbol: 1,
-      chain: 1,
-   },
-   {
-      unique: true,
    },
 )
 

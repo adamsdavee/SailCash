@@ -25,6 +25,7 @@ module.exports = {
       PROCESSING: "PROCESSING",
       SUCCESS: "SUCCESS",
       FAILED: "FAILED",
+      CANCELLED: "CANCELLED",
    },
 
    ASSET_TYPES: {
@@ -38,5 +39,20 @@ module.exports = {
       ETH: "ETH",
       BASE: "BASE",
       ARBITRUM: "ARBITRUM",
+   },
+   TRANSACTION_TYPES: {
+      INTERNAL_TRANSFER: "INTERNAL_TRANSFER",
+
+      CRYPTO_DEPOSIT: "CRYPTO_DEPOSIT",
+
+      CRYPTO_WITHDRAWAL: "CRYPTO_WITHDRAWAL",
+
+      FIAT_DEPOSIT: "FIAT_DEPOSIT",
+
+      FIAT_WITHDRAWAL: "FIAT_WITHDRAWAL",
+
+      BUY: "BUY",
+
+      SELL: "SELL",
    },
 }

@@ -33,8 +33,8 @@ const balanceSchema = new mongoose.Schema(
 
       lastLedgerEntryId: {
          type: mongoose.Schema.Types.ObjectId,
+         ref: "LedgerEntry",
          default: null,
-         index: true,
       },
 
       lastProjectedAt: {
@@ -44,6 +44,7 @@ const balanceSchema = new mongoose.Schema(
    },
    {
       timestamps: true,
+      optimisticConcurrency: true,
    },
 )
 

@@ -12,6 +12,10 @@ class Money {
       return new Decimal(value || "0")
    }
 
+   static zero() {
+      return "0"
+   }
+
    static add(a, b) {
       return this.decimal(a).plus(this.decimal(b)).toString()
    }
@@ -26,6 +30,14 @@ class Money {
 
    static divide(a, b) {
       return this.decimal(a).dividedBy(this.decimal(b)).toString()
+   }
+
+   static absolute(value) {
+      return this.decimal(value).abs().toString()
+   }
+
+   static negate(value) {
+      return this.decimal(value).negated().toString()
    }
 
    static compare(a, b) {
@@ -52,32 +64,28 @@ class Money {
       return this.compare(a, b) <= 0
    }
 
+   static isPositive(value) {
+      return this.greaterThan(value, "0")
+   }
+
    static isNegative(value) {
-      return this.decimal(value).isNegative()
+      return this.lessThan(value, "0")
    }
 
    static isZero(value) {
-      return this.decimal(value).isZero()
-   }
-
-   static absolute(value) {
-      return this.decimal(value).abs().toString()
+      return this.equals(value, "0")
    }
 
    static hasEnough(balance, amount) {
       return this.greaterThanOrEqual(balance, amount)
    }
 
-   static isPositive(amount) {
-      return this.greaterThan(amount, "0")
+   static min(a, b) {
+      return this.lessThan(a, b) ? a : b
    }
 
-   static negate(amount) {
-      return this.decimal(amount).negated().toString()
-   }
-
-   static zero() {
-      return "0"
+   static max(a, b) {
+      return this.greaterThan(a, b) ? a : b
    }
 }
 

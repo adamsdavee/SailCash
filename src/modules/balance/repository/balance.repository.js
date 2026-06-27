@@ -1,15 +1,16 @@
 const Balance = require("../model/balance.model")
 const Money = require("../../../shared/utils/money")
+
 const {
    LEDGER_ENTRY_TYPES,
    LEDGER_BALANCE_TYPES,
+   LEDGER_OWNER_TYPES,
 } = require("../../../config/constants")
 
 class BalanceRepository {
-   async createProjection(payload) {
-      return Balance.create(payload)
-   }
-
+   /**
+    * Get balance projection
+    */
    async findByUserAndAsset(userId, assetId) {
       return Balance.findOne({
          userId,
@@ -17,63 +18,97 @@ class BalanceRepository {
       })
    }
 
-   async findUserBalances(userId) {
-      return Balance.find({
+   /**
+    * Get or automatically create balance projection
+    */
+   async getOrCreateBalance(userId, assetId, session = null) {
+      let balance = await Balance.findOne({
          userId,
-      }).populate("assetId", "assetCode symbol")
+         assetId,
+      }).session(session)
+
+      if (!balance) {
+         balance = new Balance({
+            userId,
+
+            assetId,
+
+            availableBalance: Money.zero(),
+
+            pendingBalance: Money.zero(),
+
+            lockedBalance: Money.zero(),
+
+            lastLedgerEntryId: null,
+
+            lastProjectedAt: null,
+         })
+
+         await balance.save({
+            session,
+         })
+      }
+
+      return balance
    }
 
-   async update(id, payload) {
-      return Balance.findByIdAndUpdate(id, payload, {
-         new: true,
-      })
-   }
-
-   // Updating user balance details
-
+   /**
+    * Apply a Ledger Entry to the projection.
+    * This is the ONLY method that changes balances.
+    */
    async applyDelta(ledgerEntry, session = null) {
-      // MVP: only USER balances are projected
+      /**
+       * MVP:
+       * Only user balances are projected.
+       *
+       * Treasury balances will get
+       * their own projection repository
+       * in Phase 8.
+       */
       if (ledgerEntry.ownerType !== LEDGER_OWNER_TYPES.USER) {
          return null
       }
 
-      const balance = await Balance.findOne({
-         userId: ledgerEntry.ownerId,
+      const balance = await this.getOrCreateBalance(
+         ledgerEntry.ownerId,
 
-         assetId: ledgerEntry.assetId,
-      }).session(session)
+         ledgerEntry.assetId,
 
-      if (!balance) {
-         throw new Error("Balance projection not found.")
-      }
+         session,
+      )
 
-      let balanceField
+      let field
 
       switch (ledgerEntry.balanceType) {
          case LEDGER_BALANCE_TYPES.AVAILABLE:
-            balanceField = "availableBalance"
+            field = "availableBalance"
+
             break
 
          case LEDGER_BALANCE_TYPES.PENDING:
-            balanceField = "pendingBalance"
+            field = "pendingBalance"
+
             break
 
          case LEDGER_BALANCE_TYPES.LOCKED:
-            balanceField = "lockedBalance"
+            field = "lockedBalance"
+
             break
 
          default:
-            throw new Error("Invalid balance type.")
+            throw new Error("Unsupported balance type.")
       }
 
       if (ledgerEntry.entryType === LEDGER_ENTRY_TYPES.DEBIT) {
-         balance[balanceField] = Money.subtract(
-            balance[balanceField],
+         balance[field] = Money.subtract(
+            balance[field],
+
             ledgerEntry.amount,
          )
       } else {
-         balance[balanceField] = Money.add(
-            balance[balanceField],
+         balance[field] = Money.add(
+            balance[field],
+
             ledgerEntry.amount,
          )
       }
@@ -82,9 +117,20 @@ class BalanceRepository {
 
       balance.lastProjectedAt = new Date()
 
-      await balance.save({ session })
+      await balance.save({
+         session,
+      })
 
       return balance
+   }
+
+   /**
+    * Used by APIs
+    */
+   async getBalances(userId) {
+      return Balance.find({
+         userId,
+      }).populate("assetId")
    }
 }
 

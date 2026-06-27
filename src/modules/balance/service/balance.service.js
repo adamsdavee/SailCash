@@ -1,36 +1,37 @@
 const balanceRepository = require("../repository/balance.repository")
 
 class BalanceService {
-   async getOrCreateBalance(userId, assetId) {
-      let balance = await balanceRepository.findByUserAndAsset(userId, assetId)
-
-      if (!balance) {
-         balance = await balanceRepository.createProjection({
-            userId,
-            assetId,
-
-            availableBalance: 0,
-
-            pendingBalance: 0,
-
-            lockedBalance: 0,
-
-            lastLedgerEntryId: null,
-
-            lastProjectedAt: null,
-         })
-      }
-
-      return balance
+   /**
+    * Get a user's balance for a specific asset.
+    *
+    * Used by:
+    * - Transfer Service
+    * - Buy/Sell Service
+    * - Withdrawal Service
+    */
+   async getBalance(userId, assetId) {
+      return balanceRepository.getOrCreateBalance(userId, assetId)
    }
 
-   async getUserBalances(userId) {
-      return balanceRepository.findUserBalances(userId)
+   /**
+    * Get all balances for a user.
+    *
+    * Used by:
+    * - "Show my balances"
+    * - Wallet dashboard
+    */
+   async getBalances(userId) {
+      return balanceRepository.getBalances(userId)
    }
 
-   // Only ledger service allowed to call this function
-   async updateProjection(balanceId, payload) {
-      return balanceRepository.update(balanceId, payload)
+   /**
+    * Project a ledger entry into the balance projection.
+    *
+    * IMPORTANT:
+    * Only LedgerService should call this.
+    */
+   async projectFromLedger(ledgerEntry, session = null) {
+      return balanceRepository.applyDelta(ledgerEntry, session)
    }
 }
 

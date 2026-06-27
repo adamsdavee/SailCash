@@ -3,39 +3,65 @@ const Decimal = require("decimal.js")
 Decimal.set({
    precision: 40,
    rounding: Decimal.ROUND_HALF_UP,
+   toExpNeg: -100,
+   toExpPos: 100,
 })
 
 class Money {
+   static decimal(value) {
+      return new Decimal(value || "0")
+   }
+
    static add(a, b) {
-      return new Decimal(a).plus(new Decimal(b)).toString()
+      return this.decimal(a).plus(this.decimal(b)).toString()
    }
 
    static subtract(a, b) {
-      return new Decimal(a).minus(new Decimal(b)).toString()
+      return this.decimal(a).minus(this.decimal(b)).toString()
    }
 
-   static greaterThan(a, b) {
-      return new Decimal(a).greaterThan(new Decimal(b))
+   static multiply(a, b) {
+      return this.decimal(a).times(this.decimal(b)).toString()
    }
 
-   static greaterThanOrEqual(a, b) {
-      return new Decimal(a).greaterThanOrEqualTo(new Decimal(b))
+   static divide(a, b) {
+      return this.decimal(a).dividedBy(this.decimal(b)).toString()
    }
 
-   static lessThan(a, b) {
-      return new Decimal(a).lessThan(new Decimal(b))
+   static compare(a, b) {
+      return this.decimal(a).comparedTo(this.decimal(b))
    }
 
    static equals(a, b) {
-      return new Decimal(a).equals(new Decimal(b))
+      return this.compare(a, b) === 0
    }
 
-   static isNegative(a) {
-      return new Decimal(a).isNegative()
+   static greaterThan(a, b) {
+      return this.compare(a, b) > 0
    }
 
-   static isZero(a) {
-      return new Decimal(a).isZero()
+   static greaterThanOrEqual(a, b) {
+      return this.compare(a, b) >= 0
+   }
+
+   static lessThan(a, b) {
+      return this.compare(a, b) < 0
+   }
+
+   static lessThanOrEqual(a, b) {
+      return this.compare(a, b) <= 0
+   }
+
+   static isNegative(value) {
+      return this.decimal(value).isNegative()
+   }
+
+   static isZero(value) {
+      return this.decimal(value).isZero()
+   }
+
+   static absolute(value) {
+      return this.decimal(value).abs().toString()
    }
 }
 

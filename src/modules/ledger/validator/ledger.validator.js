@@ -9,7 +9,7 @@ const {
 } = require("../../../config/constants")
 
 class LedgerValidator {
-   static validateEntries(entries) {
+   static validate(entries) {
       if (!Array.isArray(entries)) {
          throw new LedgerPostingError(
             "Ledger entries must be an array.",

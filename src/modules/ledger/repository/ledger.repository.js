@@ -12,6 +12,7 @@ class LedgerRepository {
    async createMany(entries, session = null) {
       return LedgerEntry.insertMany(entries, {
          session,
+         ordered: true,
       })
    }
 

@@ -63,6 +63,22 @@ class Money {
    static absolute(value) {
       return this.decimal(value).abs().toString()
    }
+
+   static hasEnough(balance, amount) {
+      return this.greaterThanOrEqual(balance, amount)
+   }
+
+   static isPositive(amount) {
+      return this.greaterThan(amount, "0")
+   }
+
+   static negate(amount) {
+      return this.decimal(amount).negated().toString()
+   }
+
+   static zero() {
+      return "0"
+   }
 }
 
 module.exports = Money

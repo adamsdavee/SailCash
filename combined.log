@@ -354,3 +354,5 @@
 {"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-27T10:52:43.662Z"}
 {"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-27T10:52:59.609Z"}
 {"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-27T10:53:01.140Z"}
+{"level":"info","message":"Server running on port 5000","service":"fintech-service","timestamp":"2026-06-27T10:53:07.863Z"}
+{"level":"info","message":"MongoDB connected successfully","service":"fintech-service","timestamp":"2026-06-27T10:53:09.506Z"}

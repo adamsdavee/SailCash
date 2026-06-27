@@ -1,11 +1,11 @@
 const mongoose = require("mongoose")
 
-async function mongoTransaction(work) {
+async function transactionManager(work) {
    const session = await mongoose.startSession()
 
-   session.startTransaction()
-
    try {
+      session.startTransaction()
+
       const result = await work(session)
 
       await session.commitTransaction()
@@ -16,8 +16,8 @@ async function mongoTransaction(work) {
 
       throw error
    } finally {
-      session.endSession()
+      await session.endSession()
    }
 }
 
-module.exports = mongoTransaction
+module.exports = transactionManager

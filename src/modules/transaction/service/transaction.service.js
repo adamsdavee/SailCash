@@ -1,52 +1,111 @@
 const transactionRepository = require("../repository/transaction.repository")
 
-const referenceGenerator = require("../../../shared/utils/referenceGenerator")
+const { TRANSACTION_STATUS } = require("../../../config/constants")
 
 class TransactionService {
-   async createTransaction(payload) {
-      const existing = await transactionRepository.findByIdempotencyKey(
-         payload.idempotencyKey,
+   /**
+    * Create a new transaction.
+    */
+   async create(data, session = null) {
+      return transactionRepository.create(data, session)
+   }
+
+   /**
+    * Find transaction by MongoDB ID.
+    */
+   async findById(transactionId, populate = true) {
+      return transactionRepository.findById(transactionId, populate)
+   }
+
+   /**
+    * Find transaction by internal reference.
+    */
+   async findByReference(reference, populate = true) {
+      return transactionRepository.findByReference(reference, populate)
+   }
+
+   /**
+    * Find transaction using idempotency key.
+    */
+   async findByIdempotencyKey(idempotencyKey) {
+      return transactionRepository.findByIdempotencyKey(idempotencyKey)
+   }
+
+   /**
+    * Check whether a reference already exists.
+    */
+   async existsByReference(reference) {
+      return transactionRepository.existsByReference(reference)
+   }
+
+   /**
+    * Update transaction status.
+    */
+   async updateStatus(
+      transactionId,
+      status,
+      failureReason = null,
+      session = null,
+   ) {
+      return transactionRepository.updateStatus(
+         transactionId,
+         status,
+         failureReason,
+         session,
       )
-
-      if (existing) {
-         return existing
-      }
-
-      return transactionRepository.create({
-         ...payload,
-
-         reference: referenceGenerator.generate("TXN"),
-
-         statusHistory: [
-            {
-               status: "PENDING",
-            },
-         ],
-      })
    }
 
-   async markProcessing(id) {
-      return transactionRepository.update(id, {
-         status: "PROCESSING",
-      })
+   /**
+    * Convenience helpers
+    */
+
+   async markProcessing(transactionId, session = null) {
+      return this.updateStatus(
+         transactionId,
+         TRANSACTION_STATUS.PROCESSING,
+         null,
+         session,
+      )
    }
 
-   async markSuccess(id) {
-      return transactionRepository.update(id, {
-         status: "SUCCESS",
-      })
+   async markSuccess(transactionId, session = null) {
+      return this.updateStatus(
+         transactionId,
+         TRANSACTION_STATUS.SUCCESS,
+         null,
+         session,
+      )
    }
 
-   async markFailed(id, reason) {
-      return transactionRepository.update(id, {
-         status: "FAILED",
-
-         failureReason: reason,
-      })
+   async markFailed(transactionId, reason, session = null) {
+      return this.updateStatus(
+         transactionId,
+         TRANSACTION_STATUS.FAILED,
+         reason,
+         session,
+      )
    }
 
-   async getUserTransactions(userId) {
-      return transactionRepository.findUserTransactions(userId)
+   /**
+    * Save external provider reference.
+    */
+   async updateExternalReference(
+      transactionId,
+      externalReference,
+      session = null,
+   ) {
+      return transactionRepository.updateExternalReference(
+         transactionId,
+         externalReference,
+         session,
+      )
+   }
+
+   /**
+    * Get a user's transactions.
+    */
+   async findUserTransactions(userId, options = {}) {
+      return transactionRepository.findUserTransactions(userId, options)
    }
 }
 

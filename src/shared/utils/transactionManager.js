@@ -10,12 +10,18 @@ async function transactionManager(work) {
 
       await session.commitTransaction()
 
+      await session.endSession()
+
       return result
    } catch (error) {
       await session.abortTransaction()
 
       throw error
    } finally {
+      if (session.inTransaction()) {
+         await session.abortTransaction()
+      }
+
       await session.endSession()
    }
 }

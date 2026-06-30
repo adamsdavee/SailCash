@@ -12,6 +12,10 @@ const assetRoutes = require("../modules/asset/routes/asset.routes")
 
 const balanceRoutes = require("../modules/balance/routes/balance.routes")
 
+const bankingRoutes = require("../modules/banking/routes/bank-account.routes")
+
+router.use("/banking", bankingRoutes)
+
 router.use("/", systemRoutes)
 
 router.use("/api/v1", userRoutes) // Admin only routes, not to be made public
